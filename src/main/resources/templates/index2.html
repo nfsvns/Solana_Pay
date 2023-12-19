@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/layout2.html::dynamic(~{::title}, ~{::body})}">
+<head>
+
+<title>Solana Personal</title>
+<meta charset="utf-8">
+</head>
+<body class="custom-body-style">
+
+
+<div class="container ">
+	<!-- Carousel wrapper -->
+	<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel"
+		 data-mdb-carousel-init>
+		<!-- Indicators -->
+		<div class="carousel-indicators">
+			<button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"
+					aria-label="Slide 2"></button>
+			<button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"
+					aria-label="Slide 3"></button>
+		</div>
+
+		<!-- Inner -->
+		<div class="carousel-inner">
+			<!-- Single item -->
+			<div class="carousel-item active">
+				<img src="https://www.playtoearn.online/wp-content/uploads/2022/03/Solana_banner.jpg"
+					 class="d-block w-100" alt="Sunset Over the City" />
+				<div class="carousel-caption d-none d-md-block">
+					<h5>SOLANA</h5>
+					<p>Solana is a blockchain platform which uses a proof-of-stake mechanism to provide smart
+						contract functionality. Its native cryptocurrency is SOL.</p>
+				</div>
+			</div>
+
+			<!-- Single item -->
+			<div class="carousel-item">
+				<img src="https://cdn.coin68.com/uploads/2021/11/Institutional-Investments-Flow-to-Solana-as-BTC-Outflows-Continue.jpg"
+					 class="d-block w-100" alt="Canyon at Nigh" />
+				<div class="carousel-caption d-none d-md-block">
+					<h5></h5>
+					<p></p>
+				</div>
+			</div>
+
+			<!-- Single item -->
+			<div class="carousel-item">
+				<img src="https://static.vecteezy.com/system/resources/previews/003/450/395/original/solana-coin-banner-sol-coin-cryptocurrency-concept-banner-background-vector.jpg"
+					 class="d-block w-100" alt="Cliff Above a Stormy Sea" />
+				<div class="carousel-caption d-none d-md-block">
+					<h5></h5>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<!-- Inner -->
+
+		<!-- Controls -->
+		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample"
+				data-mdb-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample"
+				data-mdb-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card2" style="background-color: #111111;">
+					<img src="https://www.paypalobjects.com/consumeronboarding/images/new-ux/activation-module/nux-p2p-send-mobile.png"
+						 class="card-img-top" alt="Fissure in Sandstone" />
+					<div class="card-body">
+						<h5 class="card-title2">Send Money</h5>
+						<p class="card-text2">Pay someone, buy something, or give a
+							gift.</p>
+						<a href="#!" class="btn btn-primary" data-mdb-ripple-init>SEND NOW</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card2" style="background-color: #111111; margin-left: 17px;">
+					<img src="https://www.paypalobjects.com/consumeronboarding/images/new-ux/activation-module/nux-p2p-request-mobile.png"
+						 class="card-img-top" alt="Fissure in Sandstone" />
+					<div class="card-body">
+						<h5 class="card-title2">Request Money</h5>
+						<p class="card-text2">Ask a friend to pay you back-the
+							friendly way.</p>
+						<a href="#!" class="btn btn-primary" data-mdb-ripple-init>SEND A REQUEST</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card2" style="background-color: #111111; margin-left: 17px;">
+					<img src="https://www.paypalobjects.com/consumeronboarding/images/new-ux/activation-module/nux-add-payment-method-mobile.png"
+						 class="card-img-top" alt="Fissure in Sandstone" />
+					<div class="card-body">
+						<h5 class="card-title2">Add a card to shop the world</h5>
+						<p class="card-text2">Buy with confidence with your card info
+							secure..</p>
+						<a href="#!" class="btn btn-primary" data-mdb-ripple-init>ADD TO YOUR WALLET</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="card3">
+		<div class="card-header" style="left:5%">
+		<h4>SOL balance</h4>	
+		</div>
+		<div class="card-body">
+			<h5 class="card-title2">{{balance | number:2}}</h5>
+			<p class="card-text2">Available</p>
+			<a href="" class="btn btn-primary" style="margin-top: 50px;" ng-click="getBalance()">Get Balance</a>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card-read" style="background-color: #111111; margin-left: 17px;">
+					<img src="https://solana.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fkeynote.4dfbae06.jpg&w=1920&q=75"
+						 class="card-img-top-read" alt="Fissure in Sandstone" />
+
+					<div class="card-body-read">
+						<h5 class="card-title-read text-white">Get Started</h5>
+						<p class="card-text-read text-white">Some quick example text to build on the card title and make up the bulk
+							of the card's content.</p>
+						<a href="#!" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card-read" style="background-color: #111111; margin-left: 17px;">
+					<img src="https://solana.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgoogle-cloud.d0fad9b4.jpg&w=1920&q=75"
+						 class="card-img-top-read" alt="Fissure in Sandstone" />
+
+					<div class="card-body-read">
+						<h5 class="card-title-read text-white">Get Started</h5>
+						<p class="card-text-read text-white">Some quick example text to build on the card title and make up the bulk
+							of the card's content.</p>
+						<a href="#!" class="btn btn-primary" data-mdb-ripple-init>Read</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+
+
+	<br>
+</div>
+<br>
+
+
+<!-- MDB -->
+<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js"></script>
+</body>
+</html>

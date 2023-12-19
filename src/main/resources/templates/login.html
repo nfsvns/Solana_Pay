@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/layout.html::dynamic(~{::title}, ~{::body})}">
+<head>
+<title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+<meta charset="utf-8">
+</head>
+<body>
+	<div class="bg-light py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 mb-0">
+					<a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong
+						class="text-black">Login</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="site-section">
+		<div class="container">
+			<!-- Form-->
+			<div class="form">
+				<div class="form-toggle"></div>
+				<div class="form-panel one">
+					<div class="form-header text-center">
+						<h1>Login</h1>
+					</div>
+					<div class="form-content">
+						<form action="/login/success" method="post">
+							<p class="text-danger">[[${message}]] [[${param.error}]]</p>
+							<div class="form-group">
+								<label for="username">Username</label> <input id="username"
+									type="text" name="username" required="required" />
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label> <input id="password"
+									type="password" name="password" required="required" />
+							</div>
+							<div class="form-group">
+								<!-- <label class="form-remember"> <input type="checkbox" />Remember
+									Me -->
+								</label><a class="form-recovery" href="/forgetPassword">Forgot Password?</a>
+							</div>
+							<div class="form-group">
+								<button type="submit">Sign In</button>
+							</div>
+							<div class="d-flex">
+								<label> Don't Have Account?
+									
+								</label><a  href="/register.html">Sign Up</a>
+							</div>
+						<!-- 	<a type="button" class="btn btn-outline-danger w-100 mb-3" href="/oauth2/authorization/google">Google</a>
+							<a type="button" class="btn btn-outline-primary  w-100" href="/oauth2/authorization/facebook">Facebook</a> -->
+
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/layout.html::dynamic(~{::title}, ~{::body})}">
+<head>
+<title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+<meta charset="utf-8">
+</head>
+<body>
+	<div class="bg-light py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 mb-0">
+					<a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong
+						class="text-black">Login</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="site-section">
+		<div class="container">
+			<!-- Form-->
+			<div class="form">
+				<div class="form-toggle"></div>
+				<div class="form-panel one">
+					<div class="form-header">
+						<h1>Sign Up</h1>
+					</div>
+					<div class="form-content">
+						<form action="/register/success" method="post">
+							<p class="text-danger">[[${message}]] [[${param.error}]]</p>
+							<div class="form-group">
+								<label for="username">Username</label> <input id="username" placeholder="Username"
+									type="text" name="username" required="required" />
+								<c:if test="${not empty error}">
+									<div class="form-text text-danger">[[${error}]]</div>
+								</c:if>
+							</div>
+							<div class="form-group">
+								<label for="fullname">Fullname</label> <input id="fullname" placeholder="fullname"
+									type="text" name="fullname" required="required" />
+							</div>
+							<div class="form-group">
+								<label for="fullname">Email</label> <input id="email" placeholder="email"
+									type="text" name="email" required="required" />
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label> <input id="password" placeholder="Password"
+									type="password" name="password" required="required" />
+							</div>
+							<div class="form-group">
+								<label for="password">Confirm Password</label> <input id="confirmPassword" placeholder="Confirm Password"
+									type="password" name="confirmPassword" required="required" />
+							</div>
+							
+							<!-- <div class="form-group">
+								<label for="password">Email</label> <input id="password" placeholder="Email"
+									type="email" name="email" required="required" />
+							</div> -->
+
+							<div class="form-group">
+								<button type="submit">Sign Up</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

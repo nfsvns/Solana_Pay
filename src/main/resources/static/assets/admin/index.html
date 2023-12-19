@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>SB Admin 2 - Dashboard</title>
+	<!-- Custom fonts for this template-->
+	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link
+		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/fa975b375a.js" crossorigin="anonymous"></script>
+	<!-- Custom styles for this template-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+	<link href="css/sb-admin-2.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/history.css">
+	<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+</head>
+
+<body id="page-top" ng-app="app">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div sty ng-include="'/assets/admin/_menu.html'"></div>
+
+		<!-- End of Sidebar -->
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!-- Topbar -->
+				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+					<!-- Sidebar Toggle (Topbar) -->
+					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<!-- Topbar Navbar -->
+					<ul class="navbar-nav ml-auto">
+						<!-- Nav Item - User Information -->
+						<li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" href="#"
+								id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><a
+										href="/login" style="text-decoration: none"
+										th:if="${#request.remoteUser != null}"> <span
+											th:text="${#request.remoteUser}"></span> <span
+											class="icon icon-person text-truncate"></span>
+									</a></span> <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+							</a> <!-- Dropdown - User Information -->
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="#"> <i
+										class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
+								</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+									Logout
+								</a>
+							</div>
+						</li>
+
+					</ul>
+				</nav>
+
+				<main class="container">
+					<p class="ng-view" />
+				</main>
+			</div>
+			<!-- End of Main Content -->
+
+			<!-- Footer -->
+			<div ng-include="'/assets/admin/_footer.html'"></div>
+			<!-- End of Footer -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
+	</a>
+	<!-- Bootstrap core JavaScript-->
+	<script src="/assets/admin/js/admin-app.js"></script>
+	<script src="/assets/admin/js/comments-ctrl.js"></script>
+	<script src="/assets/admin/js/product-ctrl.js"></script>
+	<script src="/assets/admin/js/authority-ctrl.js"></script>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/admin/js/accounts-ctrl.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.js"></script>
+	<script src="js/sb-admin-2.min.js"></script>
+
+	<!-- Chart with index label -->
+	<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+</body>
+
+</html>

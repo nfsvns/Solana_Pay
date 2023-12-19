@@ -1,0 +1,17 @@
+/* CSS */
+.table-condensed{
+    position: relative;
+}
+
+
+/* CSS cho bảng chi tiết */
+.detail-table {
+    opacity: 0.9;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+   
+    max-width: 2000px;
+    z-index: 2;
+    border-radius: 10px;
+}

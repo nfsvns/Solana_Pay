@@ -1,0 +1,16 @@
+
+<ul class="nav nav-tabs">
+	<li><a data-toggle="tab" data-target="#edit" href=""
+		style="text-decoration: none; padding-right: 20px;">Comment
+			Edition</a></li>
+	<li class="active"><a data-toggle="tab" data-target="#list"
+		href="" style="text-decoration: none;">List of Comments</a></li>
+</ul>
+<div class="tab-content">
+	<div id="edit" class="tab-pane fade">
+		<div ng-include="'/assets/admin/comment/_form.html'"></div>
+	</div>
+	<div id="list" class="tab-pane fade show active">
+		<div ng-include="'/assets/admin/comment/_table.html'"></div>
+	</div>
+</div>

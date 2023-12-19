@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+th:replace="~{/layout/layout2.html::dynamic(~{::title}, ~{::body})}">
+<head>
+<title>Purchased Success</title>
+<meta charset="utf-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="success-box">
+    <div class="dot"></div>
+    <div class="dot two"></div>
+    <div class="face">
+      <div class="eye"></div>
+      <div class="eye right"></div>
+      <div class="mouth happy"></div>
+    </div>
+    <div class="shadow scale"></div>
+    <div class="message"><h1 class="alert">Purchased Success!</h1><p class="congra">Yay, Thank you for shopping!</p></div>
+    <button class="button-box"> <a href="/index2.html" style="text-decoration: none">
+    <h1 class="green">Home</h1>
+    </a> </button>
+    
+  </div>
+</div>
+
+</body>
+</html>

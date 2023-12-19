@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Checktest</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="CartController">
+	<h2>Checktest</h2>
+	<button class="btn btn-primary btn-lg py-3 btn-block" ng-click="initiateCheckout()">Proceed To Checkout</button>
+
+	<script>
+		app.controller('CartController', function ($scope, $http, $window) {
+			$scope.initiateCheckout = function () {
+				console.log("Button Clicked!"); // Xuất thông báo này ra console log
+				// Thực hiện các hành động khác tại đây
+				// Ví dụ: Gọi API, chuyển hướng trang web, etc.
+			};
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+	<div class="panel-heading">ACCOUNTS EDITION</div>
+	<div class="panel-body">
+		<div class="row">
+		 <div class="col-sm-4">
+            <label for="image">Choose Image:</label>
+            <input type="file" id="image"ng-model="form.photo" accept="image/*" class="form-control-file" onchange="previewImage(this)">
+            <img id="preview" th:src="@{|/images/form.photo|}" alt="Preview"  class="img-fluid mt-2" style="display: none;">
+        </div>
+			<div class="col-sm-8">
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<div>UserName</div>
+						<input ng-model="form.username"  name="username" class="form-control">
+					</div>
+					<div class="form-group col-sm-6">
+						<div>PassWord</div>
+						<input ng-model="form.password" class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<div>Email</div>
+						<input ng-model="form.email" class="form-control">
+					</div>
+					<div class="form-group col-sm-6">
+						<div>FullName</div>
+						<input ng-model="form.fullname" 
+							class="form-control"  >
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer text-center">
+		<button ng-click="create()" ng-disabled="!form.username"
+			class="btn btn-primary">
+			<b class="glyphicon glyphicon-plus"></b> Create
+		</button>
+		<button ng-click="update()" ng-disabled="!form.username"
+			class="btn btn-success">
+			<b class="glyphicon glyphicon-save"></b> Update
+		</button>
+		<button ng-click="delete(form)" ng-disabled="!form.username"
+			class="btn btn-danger">
+			<b class="glyphicon glyphicon-trash"></b> Delete
+		</button>
+		<button ng-click="reset()" class="btn btn-info">
+			<b class="glyphicon glyphicon-refresh"></b> Reset
+		</button>
+	</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="cart2-ctrl">
+	<div style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+		<img src="https://imgur.com/M0l5SDh.png" alt="solana shades" />
+		<p>Buy your Solana Shades</p>
+		<button id="checkoutButton" ng-click="initiateCheckout()">Checkout</button>
+	</div>
+
+	<script>
+		const app = angular.module("app", [])
+		app.controller("cart2-ctrl", function ($scope, $http, $window) {
+
+			$scope.requestData = {
+				network: 'devnet',
+				success_url: 'http://localhost:8080/success',
+				cancel_url: 'http://localhost:8080/cancel',
+				tokens: ['dust', 'samo'],
+				items: [
+					{
+						name: 'Product Name 1',
+						price: 0.1,
+						image: 'https://imgur.com/FOFmXwO.png',
+						quantity: 2,
+						size: 'XL'
+					}
+				],
+				shipping_fees: 0.1,
+				config: {
+					collect_shipping_address: true
+				}
+			};
+
+			$scope.initiateCheckout = function () {
+				$http.post('/api/checkout/session', $scope.requestData)
+					.then(function (response) {
+						var sessionId = response.data.session_id;
+						$scope.generatePaymentURL(sessionId);
+					})
+					.catch(function (error) {
+						console.error(error);
+					});
+			};
+
+			$scope.generatePaymentURL = function (sessionId) {
+				console.log(sessionId);
+				var apiUrl = 'https://checkout-api.candypay.fun/api/v1/session/payment_url?session_id=' + sessionId;
+				// Thêm header Authorization vào yêu cầu
+				var headers = {
+					'Authorization': 'Bearer ' + 'cp_public_ecHjg7Uc_6gwDsez4EPi4QT6nHeGxdJwB' // Thay yourPublicApiKey bằng giá trị Public API key của bạn
+				};
+
+				$http.get(apiUrl, {headers: headers})
+					.then(function (response) {
+						var paymentUrl = response.data.payment_url;
+						// Redirect đến trang thanh toán
+						$window.location.href = paymentUrl;
+					})
+					.catch(function (error) {
+						console.error(error);
+						console.error('Response data:', error.response.data);
+					});
+			};
+		})
+
+	</script>
+</body>
+
+</html>

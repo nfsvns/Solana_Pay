@@ -1,0 +1,135 @@
+<div class="panel panel-default">
+	<div class="panel-heading">COMMENT LIST</div>
+	<table class="table table-condensed">
+		<thead class="bg-success" style="font-variant: small-caps;">
+			<tr>
+				<th>Id</th>
+				<th>Username</th>
+				<th>Wallet Key</th>
+				<th>Description</th>
+				<th>Create Date</th>
+				<th>Product</th>
+				<th>Show Replies Detail</th>
+
+				<th>Action</th>
+				<th>Send reward</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="comment in pager.items">
+				<td>{{comment.id}}</td>
+				<td>{{comment.account.username}}</td>
+				<td>
+					<button class="btn btn-primary  d-flex justify-content-center" ng-if="!comment.showWallet"
+						ng-click="toggleWallet(comment)"><i class="fa-solid fa-eye"></i></button> <span
+					ng-if="comment.showWallet" ng-click="toggleWallet(comment)">
+						{{ comment.wallet | limitTo:10 }}{{ comment.wallet.length > 10 ?
+						'...' : '' }}</span>
+				</td>
+				<td>{{comment.description}}</td>
+				<td>{{comment.create_Date | date:'dd/MM/yyyy'}}</td>
+				<td>{{comment.product.name}}</td>
+				<td class="text-center">
+					<button ng-click="showReplies(comment)" class="btn text-center btn-info">
+						{{comment.showReplies ? 'Hide' : 'Show'}}
+					</button>
+				</td>
+				<td>
+					<div class="btn-group btn-group-xs">
+						<a ng-click="editComment(comment)" href="" class="btn btn-warning">
+							<i class="fa-solid fa-pen-to-square fa-2xs"></i>
+						</a> <a ng-click="deleteComment(comment)" href=""
+							class="btn btn-danger"> <i class="fa-solid fa-trash fa-2xs"></i>
+						</a>
+					</div>
+				</td>
+				<td>
+
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModal{{comment.id}}"
+						ng-show="comment.showWallet && comment.showSendGiftButton">Send
+						gift</button>
+					<div class="modal fade" id="exampleModal{{comment.id}}"
+						tabindex="-1" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel{{comment.id}}"
+										ng-click="toggleModal(comment)">Send gift</h5>
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>{{ comment.wallet | limitTo:10 }}{{
+										comment.wallet.length > 10 ? '...' : '' }}</p>
+									<p>Gửi 0.1 sol qua tài khoản {{comment.account.username}}</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary"
+										ng-click="transferSol(comment.wallet, comment.id)">Send</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</td>
+
+				<!-- Modal -->
+
+			</tr>
+		</tbody>
+		
+		
+	</table>
+	<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner" ng-repeat="comment in pager.items">
+				<table class="table table-condensed table-dark detail-table" ng-show="comment.showReplies">
+					<thead class="bg-danger text-white">
+						<tr>
+							<th>Reply Id</th>
+							<th>Description</th>
+							<th>Create Date</th>
+							<th>Product Name</th>
+							<th>Comment Id</th>
+							<th>Username</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="reply in comment.replies">
+							<td>{{reply.id}}</td>
+							<td>{{reply.description}}</td>
+							<td>{{reply.create_date | date:'dd/MM/yyyy'}}</td>
+							<td class="text-truncate">{{reply.product.name}}</td>
+							<td class="text-center">{{reply.comment.id}}</td>
+							<td>{{reply.account.username}}</td>
+							<td>
+								<button class="btn btn-warning" ng-click="deleteReply(reply)">Delete</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	<div class="panel-footer text-center">
+		<button ng-click="pager.first()" class="btn" style="width: 60px;">
+			<i class="fa-solid fa-backward-step"></i>
+		</button>
+		<button ng-click="pager.prev()" class="btn" style="width: 60px;">
+			<i class="fa-solid fa-backward"></i>
+		</button>
+		<button class="btn btn-success">{{pager.page + 1}} of
+			{{pager.count}}</button>
+		<button ng-click="pager.next()" class="btn" style="width: 60px;">
+			<i class="fa-solid fa-forward"></i>
+		</button>
+		<button ng-click="pager.last()" class="btn" style="width: 60px;">
+			<i class="fa-solid fa-forward-step"></i>
+		</button>
+	</div>
+</div>
+

@@ -1,0 +1,66 @@
+<div class="panel panel-default">
+	<div class="panel-heading">COMMENTS EDITION</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-sm-6">
+						<div>
+							<label for="formDescription" class="form-label">Description</label>
+							<input ng-model="commentForm.description" class="form-control"
+								id="formDescription">
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div>
+							<label for="formStartDate" class="form-label">Start Date</label>
+							<input ng-model="commentForm.create_Date" class="form-control"
+								type="date" id="formStartDate">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<div>
+							<label for="formDiscountAmount" class="form-label">Product
+								Id</label> <select ng-model="commentForm.product.id"
+								class="form-control">
+								<option value="" disabled selected>Select Product Id</option>
+								<option ng-repeat="p in products" ng-value="p.id">{{p.id}}
+									{{p.name}}</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div>
+							<label for="formAccount" class="form-label">Account</label> <select
+								ng-model="commentForm.account.username" class="form-control">
+								<option value="" disabled selected>Select Account</option>
+								<option ng-repeat="account in accounts"
+									ng-value="account.username">{{account.username}}</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer text-center p-3">
+		<button ng-click="createComment()" ng-disabled="commentForm.id"
+			class="btn btn-primary me-2">
+			<b class="bi bi-plus"></b> Create
+		</button>
+		<button ng-click="updateComment()" ng-disabled="!commentForm.id"
+			class="btn btn-success me-2">
+			<b class="bi bi-save"></b> Update
+		</button>
+		<button ng-click="deleteComment(commentForm)"
+			ng-disabled="!commentForm.id" class="btn btn-danger me-2">
+			<b class="bi bi-trash"></b> Delete
+		</button>
+		<button ng-click="resetForm()" class="btn btn-info">
+			<b class="bi bi-arrow-clockwise"></b> Reset
+		</button>
+	</div>

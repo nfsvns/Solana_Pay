@@ -1,0 +1,107 @@
+.card {
+    margin-top: 100px;
+    height: 350px;
+}
+
+.da {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.nav-link {
+    padding: 0 30px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.img {
+    width: 400px;
+    height: 300px;
+}
+
+.fa-bell {
+    color: yellow;
+    margin-left: 20px;
+}
+
+.fa-heart {
+    color: red;
+    margin-left: 20px;
+}
+
+.add-to-cart,
+.buy-now,
+.continue-shopping {
+    margin-right: 30px;
+    width: 240px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.text {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+.price {
+    font-size: 30px;
+    color: white;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.content {
+    font-size: 15px;
+    color: white;
+}
+
+.quantity {
+    font-size: 30px;
+    color: white;
+}
+
+.img-more {
+    width: 300px;
+    height: 200px;
+}
+
+.card-more {
+    margin-top: 30px;
+    height: 350px;
+}
+
+.img-more:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.price-more {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.custom-body-style {
+    background-color: #111111;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+th:replace="~{/layout/layout2.html::dynamic(~{::title}, ~{::body})}">
+<head>
+
+<title> Solana Personal</title>
+<meta charset="utf-8">
+</head>
+
+<body class="bd">
+<!--     <video id="background-video" autoplay muted loop> -->
+<!--         <source src="/images/video.mp4" type="video/mp4"> -->
+<!--     </video> -->
+    <div class="container">
+      <div class="row">
+        <div th:each="product : ${products}" class="col-3 pt-3">
+            <div class="nft" >
+                <div class="main">
+                    <a class='tokenImage' th:href="@{|/shop-single.html/${product.id}|}">
+                        <img th:src="@{|/images/${product.image}|}" alt="NFT" width="100%"/>
+                    </a>
+                    
+                    <p class='description'></p>
+                    <div class='tokenInfo'>
+                        <div class="price">
+                            <ins>◘</ins>
+                            <p th:text="${product.price} + ' $'"></p>
+                        </div>
+                        <div class="duration">
+                            <ins>◷</ins>
+                            <p th:text="'3 days left'"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class='creator'>
+                        <div class='wrapper'>
+                        
+                        </div>
+                        <h2 class="text-white" th:text="${product.name}"></h2>
+                    </div>
+                    <div class="card-footer">
+                        <a th:attr="ng-click=@{|cart.add(${product.id})|}" class="mt-5 buy-now btn btn-sm w-100 btn-primary" style="color: white"
+                            ng-click="saveToLocalStorage()">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  
+</body>
+
+</html>
